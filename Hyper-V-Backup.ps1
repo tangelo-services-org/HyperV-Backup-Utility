@@ -45,7 +45,7 @@ Param(
     [alias("Keep")]
     $History,
     [alias("List")]
-    [ValidateScript({Test-Path -Path $_ -PathType Leaf})]
+    ##[ValidateScript({Test-Path -Path $_ -PathType Leaf})]
     $VmList,
     [alias("Wd")]
     $WorkDirUsr,
@@ -68,10 +68,10 @@ Param(
     [alias("User")]
     $SmtpUser,
     [alias("Pwd")]
-    [ValidateScript({Test-Path -Path $_ -PathType Leaf})]
+    ##[ValidateScript({Test-Path -Path $_ -PathType Leaf})]
     $SmtpPwd,
     [Alias("Webhook")]
-    [ValidateScript({Test-Path -Path $_ -PathType Leaf})]
+    ##[ValidateScript({Test-Path -Path $_ -PathType Leaf})]
     $AllSucceedMsg = " fullSucc",
     $FailureMsg = " NEEDS TECH",
     $OutcomeState = "",
