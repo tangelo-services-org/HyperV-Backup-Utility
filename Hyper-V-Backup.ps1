@@ -999,6 +999,9 @@ else {
             Exit
         }
 
+        ## Setting an easier to use variable for computer name of the Hyper-V server.
+        $Vs = $Env:ComputerName
+
         ## Clean User entered string
         If ($BackupUsr)
         {
@@ -1007,12 +1010,10 @@ else {
 
         If ($WorkDirUsr)
         {
-            $WorkDir = $WorkDirUsr.trimend('\')
+            #$WorkDir = $WorkDirUsr.trimend('\')
+            $WorkDir = $WorkDirUsr.trimend('\') + "\" + $Vs
         }
     }
-
-    ## Setting an easier to use variable for computer name of the Hyper-V server.
-    $Vs = $Env:ComputerName
 
     ## If a VM list file is configured, get the content of the file, otherwise just get the running VMs.
     ## Clean list if it has empty lines.
